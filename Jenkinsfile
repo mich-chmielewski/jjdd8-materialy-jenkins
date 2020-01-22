@@ -13,6 +13,15 @@ pipeline {
         sh 'mvn --project biojava-alignment test'
       }
     }
-
+  stage('Hello') {
+      steps {
+        sh 'echo "Hello from Jenkins!"'
+      }
+    }
   }
+  post {
+  always {
+    junit 'biojava-alignment/target/surefire-reports/**/*.xml'
+  }
+}
 }
