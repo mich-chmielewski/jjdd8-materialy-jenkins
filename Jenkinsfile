@@ -10,7 +10,7 @@ pipeline {
     stage('Testing') {
       steps {
         sh 'mvn clean'
-        sh 'mvn --project biojava-alignment test'
+        sh 'mvn --projects biojava-alignment test'
       }
     }
   stage('Hello') {
